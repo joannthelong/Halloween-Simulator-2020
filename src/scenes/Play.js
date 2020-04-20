@@ -8,7 +8,8 @@ class Play extends Phaser.Scene {
         this.load.image('rocket', './assets/candy.png');
         this.load.image('spaceship', './assets/ghost.png');
         this.load.image('starfield', './assets/starfield.png');
-        this.load.image('fog', './assets/fog.png');
+        this.load.image('fog1', './assets/fog1.png');
+        this.load.image('fog2', './assets/fog2.png');
         this.load.image('border', './assets/border.png');
         this.load.image('gg','./assets/game over.png');
         // load spritesheets
@@ -21,7 +22,8 @@ class Play extends Phaser.Scene {
         // place tile sprite
         this.starfield = this.add.tileSprite(0, 0, 640, 480, 'starfield').setOrigin(0, 0);
         this.border = this.add.tileSprite(0, 0, 640, 480, 'border').setOrigin(0, 0);
-        this.fog = this.add.tileSprite(0, 0, 640, 480, 'fog').setOrigin(0, 0);
+        this.fog2 = this.add.tileSprite(0, 0, 640, 480, 'fog2').setOrigin(0, 0);
+        this.fog1 = this.add.tileSprite(0, 0, 640, 480, 'fog1').setOrigin(0, 0);
 
         // play background music
         this.music = this.sound.add('bg_music');
@@ -104,7 +106,8 @@ class Play extends Phaser.Scene {
         }
 
         this.starfield.tilePositionX -=4;
-        this.fog.tilePositionX -=2;
+        this.fog2.tilePositionX -=3;
+        this.fog1.tilePositionX -=2;
 
         if(!this.gameOver){
             this.p1Rocket.update();
