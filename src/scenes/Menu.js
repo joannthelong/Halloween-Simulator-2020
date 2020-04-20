@@ -5,39 +5,15 @@ class Menu extends Phaser.Scene {
   
   preload() {
         // load audio
-        this.load.audio('sfx_select', './assets/oooo select.m4a');
+        this.load.audio('sfx_select', './assets/boo select.m4a');
         this.load.audio('sfx_explosion', './assets/aw yeah.m4a');
         this.load.audio('sfx_rocket', './assets/throw.m4a');
-  }
+        this.load.audio('bg_music', './assets/Loyalty_Freak_Music_-_02_-_A_ghost_Waltz.mp3') // found here https://freemusicarchive.org/music/Loyalty_Freak_Music/WITCHY_BATTY_SPOOKY_HALLOWEEN_IN_SEPTEMBER_
+        this.load.image('title_screen', './assets/title page.png');
+      }
 
   create() {
-      // menu display
-      let menuConfig = {
-        fontFamily: 'Cambria',
-        fontSize: '28px',
-        backgroundColor: '#F3B141',
-        color: '#843605',
-        align: 'right',
-        padding: {
-            top: 5,
-            bottom: 5,
-        },
-        fixedWidth: 0
-    }
-
-    // show menu text
-    let centerX = game.config.width/2;
-    let centerY = game.config.height/2;
-    let textSpacer = 64;
-
-    this.add.text(centerX, centerY- textSpacer, 'ROCKET PATROL', menuConfig). setOrigin(0.5);
-    this.add.text(centerX, centerY, 'Use ← → arrows to move & (F) to Fire', menuConfig).setOrigin(0.5);
-    menuConfig.backgroundColor = '#00FF00'; 
-    menuConfig.color = '#000';
-    this.add.text(centerX, centerY + textSpacer, 'Press ← for Easy or → for Hard', menuConfig).setOrigin(0.5);
-
-//    this.add.text(20, 20, "Rocket Patrol Menu");
-//    this.scene.start("playScene");
+     this.title_screen = this.add.tileSprite(0, 0, 640, 480, 'title_screen').setOrigin(0, 0); // i'm all about the short run babey 
 
     // define keys
     keyLEFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
